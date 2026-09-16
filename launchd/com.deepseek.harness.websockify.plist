@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.deepseek.harness.websockify</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/zp/novnc/venv/bin/websockify</string>
+        <string>--web</string>
+        <string>/Users/zp/novnc</string>
+        <string>6900</string>
+        <string>127.0.0.1:5900</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/zp/.dsh/websockify.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/zp/.dsh/websockify.err</string>
+</dict>
+</plist>

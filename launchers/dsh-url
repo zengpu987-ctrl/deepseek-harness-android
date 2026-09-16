@@ -1,0 +1,22 @@
+#!/bin/bash
+# Print the current DeepSeek Harness URLs (LAN + public tunnel) with the active token.
+INSTANCE="$HOME/Library/Application Support/DeepSeek Harness/instance.env"
+TOKEN=""
+if [ -f "$INSTANCE" ]; then
+  TOKEN="$(/usr/bin/grep '^url=' "$INSTANCE" | /usr/bin/sed 's/^url=//' | /usr/bin/sed 's/.*token=//')"
+fi
+
+LAN_IP="$(/sbin/ifconfig en0 2>/dev/null | /usr/bin/awk '/inet /{print $2}' | /usr/bin/head -n1)"
+CF_HOST="$(/usr/bin/grep -ao 'https://[a-z0-9-]*\.trycloudflare\.com' "$HOME/.dsh/cloudflared.err" 2>/dev/null | /usr/bin/head -n1)"
+
+if [ -n "$TOKEN" ]; then
+  if [ -n "$LAN_IP" ]; then
+    echo "LAN:   http://$LAN_IP:3082/?token=$TOKEN"
+  fi
+  if [ -n "$CF_HOST" ]; then
+    echo "公网:  $CF_HOST/?token=$TOKEN"
+  fi
+else
+  echo "no active instance token" >&2
+  exit 1
+fi

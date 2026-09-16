@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.deepseek.harness.lanrelay</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/zp/nodejs/bin/node</string>
+        <string>/Users/zp/.dsh/lan-relay.cjs</string>
+    </array>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>DSH_RELAY_PORT</key>
+        <string>3082</string>
+        <key>DSH_RELAY_TARGET</key>
+        <string>3081</string>
+    </dict>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/zp/.dsh/lan-relay.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/zp/.dsh/lan-relay.err</string>
+</dict>
+</plist>

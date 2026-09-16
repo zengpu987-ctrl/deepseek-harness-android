@@ -1,0 +1,18 @@
+{
+  "name": "dsh-dsha",
+  "version": "1.0.0",
+  "description": "DSHA: remote-control the Android phone with a live screen window (scrcpy)",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT"
+}

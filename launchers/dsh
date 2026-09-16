@@ -1,0 +1,5 @@
+#!/bin/sh
+# dsh launcher: disable session telemetry and bound Node heap growth.
+export DSH_TELEMETRY_MODE=OFF
+export NODE_OPTIONS="--max-old-space-size=1536 ${NODE_OPTIONS:-}"
+exec /Users/zp/nodejs/bin/dsh "$@"
