@@ -8,6 +8,7 @@ VNC 图形远控电脑、DSHA 实时手机画面，以及陀螺仪视差动效�
 
 完整中文文档见 [README.zh-CN.md](README.zh-CN.md)，详细操作手册见
 [docs/OPERATION_MANUAL.zh-CN.md](docs/OPERATION_MANUAL.zh-CN.md)。
+iOS 版本源码见 [ios/README.md](ios/README.md)。
 
 ---
 
@@ -35,6 +36,9 @@ launches a live phone screen.
 - **macOS desktop window** (`desktop/`): a Swift `WKWebView` app that owns its
   own `dsh web` server, shows the DeepSeek API balance, and adds a **DSHA**
   menu item that launches `scrcpy` to view/control the connected phone.
+- **iOS client** (`ios/`): a SwiftUI port of the Android client (WebView +
+  native drawer, plugin marketplace, device control, VNC, gyroscope parallax,
+  and particle splash).
 - **API bridge** (`server/remote-api.cjs`): a small Node HTTP server exposing
   `/health`, `/devices`, `/plugins`, `/install`, `/upload`, and `/exec`.
 - **LAN relay** (`server/lan-relay.cjs`): a TCP forwarder that lets the phone
@@ -64,6 +68,9 @@ launches a live phone screen.
 │   ├── DSHWindow.swift              macOS WKWebView window + balance + DSHA
 │   ├── start-server.sh              owns/start the app's dsh web instance
 │   └── build-window.sh              swiftc rebuild + ad-hoc codesign
+├── ios/
+│   ├── README.md                    iOS build instructions (bilingual)
+│   └── DSHA/                        SwiftUI source
 ├── server/
 │   ├── remote-api.cjs               device/plugin/upload/exec bridge
 │   └── lan-relay.cjs                TCP forwarder for LAN access
