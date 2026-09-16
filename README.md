@@ -1,5 +1,16 @@
 # DeepSeek Harness Android (DSHA)
 
+## 中文说明 / Chinese Overview
+
+DeepSeek Harness Android（DSHA）是一套开源的远程控制套件：用一个安卓原生客户端
+连接自托管的 DeepSeek Harness，支持连接设备、插件市场、工作区选择、命令执行、
+VNC 图形远控电脑、DSHA 实时手机画面，以及陀螺仪视差动效和鲸鱼粒子开屏动画。
+
+完整中文文档见 [README.zh-CN.md](README.zh-CN.md)，详细操作手册见
+[docs/OPERATION_MANUAL.zh-CN.md](docs/OPERATION_MANUAL.zh-CN.md)。
+
+---
+
 An open-source remote-control suite that connects an Android phone to a
 self-hosted **DeepSeek Harness** instance. It provides a native Android client,
 a macOS desktop window, a local/remote API bridge, and a harness plugin that
